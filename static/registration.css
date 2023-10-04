@@ -1,0 +1,79 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+        background-color: rgba(255, 255, 255, 0.562);
+
+}
+
+body {
+    background-image: url('https://www.pixel4k.com/wp-content/uploads/2020/08/dark-abstract-black-minimal_1596927735-1536x864.jpg.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    }
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container p {
+    text-align: center;
+
+}
+
+.container label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.container input[type="text"],
+.container input[type="password"],
+.container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+b{
+    color: white;
+}
+
+.container button {
+    background-color: rgb(130, 36, 143);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position:relative;
+    left:5%;
+    width: 90%;
+    
+}
+
+.container button:hover {
+    background-color: rgb(109, 29, 119);
+}
+
+.links {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+}
+
+.no-account {
+    margin-top: 10px;
+}

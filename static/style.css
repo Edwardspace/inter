@@ -1,0 +1,74 @@
+ .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(0, 220, 220);
+  border: 1px solid #030405;
+  border-radius: 5px;
+}
+body {
+  background-image: url('https://www.pixel4k.com/wp-content/uploads/2020/08/dark-abstract-black-minimal_1596927735-1536x864.jpg.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(130, 36, 143);
+  color: white;
+  border: none;
+  cursor: pointer;
+  min-width: 400px;
+  
+}
+
+
+.back :hover{
+  background-color: rgb(109, 29, 119);
+}
+
+.back a{
+  text-decoration: none;
+  text-align: center;
+  color: white;
+
+}
+
+b{
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  padding: 10px;  
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: rgb(130, 36, 143);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(109, 29, 119);
+}

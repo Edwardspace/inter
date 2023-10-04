@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <center><b>{{message}}</b></center>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <title>Answers</title>
+</head>
+<body>
+    <div class="centerdiv">
+        <h2>Welcome to the Q&A Forum</h2>
+        <p1 style="color: gray;">Feel free to ask questions and participate in discussion!</p1><br><br>
+
+
+        <div class="main"><div class="flex-container">
+            <a href="{{url_for('home')}}"> <button>Home</button></a>
+            <a href="{{url_for('askquestion')}}"> <button>Ask Question</button></a>
+            <a href="{{url_for('question')}}"> <button>All Questions</button></a>
+            <a href="{{url_for('logout')}}"><button>Logout</button></a>
+        </div></div>
+
+
+    <h1>Question:</h1>
+
+             {% for i in data %}
+                
+                <h3>{{i[1]}}</h3>
+                <p1>Posted by : {{i[2]}}</p1>
+
+                
+                <h3>Answer</h3>
+                
+                <form action="/ans/{{i[0]}}"  method="post">
+                    <textarea rows="6" cols="100" name="answer"  placeholder="Your Answer" required></textarea><br><br>
+                    <input class='centerdiv'type="submit"></input>
+                </form>
+            {% endfor %}
+            <br>
+                
+
+    <h2>Answers</h2>
+    {% for j in data2 %}
+    <h1>{{j[1]}}</h1>
+    <p1>Posted By: {{j[3]}}</p1><br><br>
+    <p1>Likes: {{j[5]}}</p1><br><br>
+    <a href="{{url_for('upvote',aid=j[0])}}"><button>Like </button></a><br><br>
+    <div class='flex-container'><div class='main'>
+        <a href="{{url_for('reply',aid=j[0])}}"> <button>View Replies</button></a></div></div>
+    {% endfor %} 
+    <div class='flex-container'><div class='main'>
+        <br><a href="{{url_for('question')}}"><button>Back</button></a>
+    </div></div>
+    
+
+</div>
+</body>
+</html>

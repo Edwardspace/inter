@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <center><b>{{message}}</b></center>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <title>Reply</title>
+</head>
+<body>
+    <div class="centerdiv">
+        <h2>Welcome to the Q&A Forum</h2>
+        <p1 style="color: gray;">Feel free to ask questions and participate in discussion!</p1><br><br>
+
+        <div class="main"><div class="flex-container">
+            <a href="{{url_for('home')}}"> <button>Home</button></a>
+            <a href="{{url_for('askquestion')}}"> <button>Ask Question</button></a>
+            <a href="{{url_for('question')}}"> <button>All Questions</button></a>
+            <a href="{{url_for('logout')}}"><button>Logout</button></a>
+        </div></div>
+
+    <br><br>
+    <h2>Answer</h2>
+    {% for i in data %}
+    <h1>{{i[1]}}</h1>
+    <form action="/rep/{{i[0]}}"  method="post">
+        <textarea rows="6" cols="100" name="reply"  placeholder="Your Reply" required></textarea><br><br>
+        <input class='centerdiv'type="submit"></input>
+    </form>
+    <br>
+    <h2>Replies:</h2>
+    {% for j in data2 %}
+    <h1>{{j[1]}}</h1>
+    <p1>Posted By:{{j[3]}}</p1>
+    {% endfor %}
+    <br><br><div class='main'><a href="{{url_for('answer',qid=i[2])}}"><button>Back</button></a></div>
+    {% endfor %}
+
+    
+</body>
+</html>

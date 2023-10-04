@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='home.css')}}">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <center><b>{{message}}</b></center>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <title>Questions</title>
+</head>
+<body>
+    
+    <div class="centerdiv">
+        <h2>Welcome to the Q&A Forum</h2>
+        <p1 style="color: gray;">Feel free to ask questions and participate in discussion!</p1><br><br>
+
+
+        <div class="main"><div class="flex-container">
+            <a href="{{url_for('home')}}"> <button>Home</button></a>
+            <a href="{{url_for('askquestion')}}"> <button>Ask Question</button></a>
+            <a href="#"> <button>All Questions</button></a>
+            <a href="{{url_for('logout')}}"><button>Logout</button></a>
+        </div></div>
+
+
+    
+    <div class="main">
+        <h1 id="heading">All Questions</h1>
+
+        
+        {% for i in data %}
+
+        <a href= "{{url_for('answer',qid=i[0])}}" class="button " id="que"><button>{{i[1]}}</button></a><br><br>
+        <p1 id="Posted">Posted by:{{i[2]}}</p1><br><br>
+        {% endfor %}
+
+        </div>
+        <div class='main'><a href="{{url_for('home')}}"><button>Back</button></a></div>
+</script>
+</body>
+</html>

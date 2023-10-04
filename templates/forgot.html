@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <center><b>{{message}}</b></center>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <title>Password Reset</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1 >Password Reset</h1>
+    <form method="post">
+    <label for="gmail">Gmail:</label>
+    <input type="email" id="gmail" name="gmail" placeholder="Enter your gmail">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your new password">
+    <p class="no-account">No account?
+        <a href="{{url_for('signup')}}">Sign up</a></p><br/>
+    <input type="submit">
+    </form>
+<br><div class="back"><a href="{{url_for('signin')}}" style=" text-align:center"><button>Back</button></a></div>
+</body>
+</html>
